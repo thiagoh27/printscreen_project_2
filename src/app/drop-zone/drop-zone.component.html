@@ -1,0 +1,34 @@
+<div class="drop-zone" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+  <p>{{ dropMessage1 }}</p>
+</div>
+
+<div
+  class="drop-zone"
+  (drop)="onDropSecond($event)"
+  (dragover)="onDragOver($event)"
+>
+  <p>{{ dropMessage2 }}</p>
+</div>
+
+<div *ngIf="excelData1.length > 0 && excelData2.length > 0">
+  <h2>First Excel Data</h2>
+  <table #excelTable1>
+    <!-- ... Código da tabela semelhante ao exemplo anterior ... -->
+  </table>
+
+  <h2>Second Excel Data</h2>
+  <table #excelTable2>
+    <!-- ... Código da tabela semelhante ao exemplo anterior ... -->
+  </table>
+
+  <!-- Botão para gerar relatório -->
+  <button (click)="compareTables()">Gerar Relatório</button>
+
+  <!-- Link de download para o PDF gerado -->
+  <a
+    *ngIf="pdfGenerated"
+    [href]="pdfDownloadLink"
+    download="{{ pdfFilename }}.pdf"
+    >Baixar Relatório</a
+  >
+</div>
