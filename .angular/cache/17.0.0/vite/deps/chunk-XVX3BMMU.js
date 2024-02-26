@@ -1,5 +1,3 @@
-import "./chunk-J5XZNU7V.js";
-
 // node_modules/html2canvas/dist/html2canvas.esm.js
 var extendStatics = function(d, b) {
   extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -7822,8 +7820,9 @@ var parseBackgroundColor = function(context, element, backgroundColorOverride) {
   return element === ownerDocument.documentElement ? isTransparent(documentBackgroundColor) ? isTransparent(bodyBackgroundColor) ? defaultBackgroundColor : bodyBackgroundColor : documentBackgroundColor : defaultBackgroundColor;
 };
 var html2canvas_esm_default = html2canvas;
+
 export {
-  html2canvas_esm_default as default
+  html2canvas_esm_default
 };
 /*! Bundled license information:
 
@@ -7848,4 +7847,4 @@ html2canvas/dist/html2canvas.esm.js:
   PERFORMANCE OF THIS SOFTWARE.
   ***************************************************************************** *)
 */
-//# sourceMappingURL=html2canvas.esm-74WERGWY.js.map
+//# sourceMappingURL=chunk-XVX3BMMU.js.map
