@@ -106,16 +106,7 @@ export class DropZoneComponent {
       }
       this.excelData2.push(rowData);
     }
-  
-    // Agora os dados estão disponíveis para exibição no HTML
-  
-    // Você pode continuar com a lógica de comparação, se necessário
-  
-    // Não se esqueça de remover a lógica de comparação atual das tabelas
-  
-    // Após isso, você pode prosseguir com a lógica de geração de PDF se necessário
-  
-    // Atualize as variáveis para exibir o link de download
+    
     this.pdfGenerated = true;
     this.pdfDownloadLink = `data:application/pdf;base64,${btoa('Comparison result')}`;
   }

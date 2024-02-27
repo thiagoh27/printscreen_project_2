@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { DropZoneComponent } from './drop-zone/drop-zone.component';
-import { HomeComponent } from './home/home.component';
+import { PrintScreenComponent } from './print-screen/print-screen.component';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     RouterModule.forRoot([{ path: '', component: DropZoneComponent }]),
   ],
-  declarations: [AppComponent, TopBarComponent, DropZoneComponent, HomeComponent],
+  declarations: [AppComponent, TopBarComponent, DropZoneComponent, PrintScreenComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

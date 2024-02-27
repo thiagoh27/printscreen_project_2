@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { NgxCaptureService } from 'ngx-capture';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-print-screen',
+  templateUrl: './print-screen.component.html',
+  styleUrl: './print-screen.component.css'
 })
-export class HomeComponent {
+export class PrintScreenComponent {
   capturedImageUrl: string = '';
 
   constructor(private captureService: NgxCaptureService) {}
@@ -22,5 +22,5 @@ export class HomeComponent {
         console.error(error);
       });
   }
-}
 
+}
