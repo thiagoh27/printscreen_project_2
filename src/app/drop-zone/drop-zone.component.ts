@@ -27,8 +27,8 @@ export class DropZoneComponent {
   pdfDownloadLink: string = '';
   pdfFilename: string = 'comparison_result';
 
-  dropMessage1: string = 'Drop the first Excel file here';
-  dropMessage2: string = 'Drop the second Excel file here';
+  dropMessage1: string = 'Arraste o arquivo VSTS';
+  dropMessage2: string = 'Arraste o arquivo PAM';
 
   constructor(private fileService: FileService) {}
 
@@ -59,22 +59,22 @@ export class DropZoneComponent {
         console.log(`Excel Data ${tableNumber}:`, data);
         if (tableNumber === 1) {
           this.excelData1 = data;
-          this.dropMessage1 = 'Excel file added successfully';
+          this.dropMessage1 = 'VSTS adicionado';
           this.dropError1 = ''; // Limpa a mensagem de erro
         } else if (tableNumber === 2) {
           this.excelData2 = data;
-          this.dropMessage2 = 'Excel file added successfully';
+          this.dropMessage2 = 'PAM adicionado';
           this.dropError2 = ''; // Limpa a mensagem de erro
         }
       })
       .catch((error) => {
-        console.error(`Error reading Excel file ${tableNumber}:`, error);
+        console.error(`Erro ao ler arquivo ${tableNumber}:`, error);
         if (tableNumber === 1) {
-          this.dropMessage1 = 'Error adding Excel file';
-          this.dropError1 = 'Failed to read Excel file'; // Define a mensagem de erro
+          this.dropMessage1 = 'Erro ao adicionar arquivo .csv';
+          this.dropError1 = 'Falha ao ler arquivo .csv'; // Define a mensagem de erro
         } else if (tableNumber === 2) {
-          this.dropMessage2 = 'Error adding Excel file';
-          this.dropError2 = 'Failed to read Excel file'; // Define a mensagem de erro
+          this.dropMessage2 = 'rro ao adicionar arquivo .csv';
+          this.dropError2 = 'Falha ao ler arquivo .csv'; // Define a mensagem de erro
         }
       });
   }
@@ -83,47 +83,41 @@ export class DropZoneComponent {
     // Implemente a lógica de comparação entre as tabelas aqui
     const table1Element: HTMLTableElement = this.excelTable1.nativeElement;
     const table2Element: HTMLTableElement = this.excelTable2.nativeElement;
-
-    // Exemplo: Comparar a primeira célula de ambas as tabelas
-    const table1Rows = table1Element.rows;
-    const table2Rows = table2Element.rows;
-
-    for (let i = 0; i < this.excelData2.length; i++) {
-      const row = this.excelData2[i];
-      console.log(`Row ${i + 1}:`, row);
-
-      for (let j = 0; j < row.length; j++) {
-        const cell = row[j];
-        console.log(`  Cell ${j + 1}:`, cell);
+  
+    // Limpar dados anteriores
+    this.excelData1 = [];
+    this.excelData2 = [];
+  
+    // Ler dados das tabelas
+    for (let i = 0; i < table1Element.rows.length; i++) {
+      const row = table1Element.rows[i];
+      const rowData = [];
+      for (let j = 0; j < row.cells.length; j++) {
+        rowData.push(row.cells[j].innerText);
       }
+      this.excelData1.push(rowData);
     }
-/*
-    if (table1Rows.length > 1 && table1Rows[1].cells.length > 0) {
-      const cell1 = table1Rows[1].cells[0].innerText;
-      // Continue com o processamento...
-    } else {
-      console.error('Não foi possível acessar as células da tabela 1');
+  
+    for (let i = 0; i < table2Element.rows.length; i++) {
+      const row = table2Element.rows[i];
+      const rowData = [];
+      for (let j = 0; j < row.cells.length; j++) {
+        rowData.push(row.cells[j].innerText);
+      }
+      this.excelData2.push(rowData);
     }
-
-    if (table2Rows.length > 1 && table2Rows[1].cells.length > 0) {
-      const cell2 = table2Rows[1].cells[0].innerText;
-      // Continue com o processamento...
-    } else {
-      console.error('Não foi possível acessar as células da tabela 2');
-    }
-*/
-    console.log(`Comparison Result:  'Equal' 'Not Equal'`);
-
-    const pdfContent = 'Equal';
-
-    // Nome do arquivo
-    const filename = 'comparison_result';
-
-    // Chame a função no serviço FileService para gerar o arquivo PDF
-    this.fileService.generatePDF(pdfContent, filename);
-
+  
+    // Agora os dados estão disponíveis para exibição no HTML
+  
+    // Você pode continuar com a lógica de comparação, se necessário
+  
+    // Não se esqueça de remover a lógica de comparação atual das tabelas
+  
+    // Após isso, você pode prosseguir com a lógica de geração de PDF se necessário
+  
     // Atualize as variáveis para exibir o link de download
     this.pdfGenerated = true;
-    this.pdfDownloadLink = `data:application/pdf;base64,${btoa(pdfContent[0])}`;
+    this.pdfDownloadLink = `data:application/pdf;base64,${btoa('Comparison result')}`;
   }
+  
 }

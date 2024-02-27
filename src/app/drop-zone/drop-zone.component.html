@@ -1,4 +1,3 @@
-
 <!-- Area onde o arquivo .csv eh inserido -->
 <div class="drop-zone" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
   <p>{{ dropMessage1 }}</p>
@@ -12,25 +11,26 @@
   <p>{{ dropMessage2 }}</p>
 </div>
 
-<div *ngIf="excelData1.length > 0 && excelData2.length > 0">
-  <h2>First Excel Data</h2>
-  <table #excelTable1>
-    <!-- ... Código da tabela semelhante ao exemplo anterior ... -->
+<div *ngIf="excelData1.length > 0">
+  <h2>Tabela 1</h2>
+  <table>
+    <tr *ngFor="let row of excelData1">
+      <td *ngFor="let cell of row">{{ cell }}</td>
+    </tr>
   </table>
-
-  <h2>Second Excel Data</h2>
-  <table #excelTable2>
-    <!-- ... Código da tabela semelhante ao exemplo anterior ... -->
-  </table>
-
-  <!-- Botão para gerar relatório -->
-  <button (click)="compareTables()">Gerar Relatório</button>
-
-  <!-- Link de download para o PDF gerado -->
-  <a
-    *ngIf="pdfGenerated"
-    [href]="pdfDownloadLink"
-    download="{{ pdfFilename }}.pdf"
-    >Baixar Relatório</a
-  >
 </div>
+
+<div *ngIf="excelData2.length > 0">
+  <h2>Tabela 2</h2>
+  <table>
+    <tr *ngFor="let row of excelData2">
+      <td *ngFor="let cell of row">{{ cell }}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Botão para gerar relatório -->
+<button (click)="compareTables()">Gerar Relatório</button>
+
+<!-- Link de download para o PDF gerado -->
+<a *ngIf="pdfGenerated" [href]="pdfDownloadLink" download="{{ pdfFilename }}.pdf">Baixar Relatório</a>
