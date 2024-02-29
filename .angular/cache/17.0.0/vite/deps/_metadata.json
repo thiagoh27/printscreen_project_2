@@ -1,53 +1,53 @@
 {
-  "hash": "873cabca",
-  "browserHash": "d9b25bf3",
+  "hash": "6fd7a265",
+  "browserHash": "750c4e2b",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "e438c0c4",
+      "fileHash": "bc8aa32a",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "9e872f26",
+      "fileHash": "bd044e9f",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "63dc597a",
+      "fileHash": "33234888",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "4894acd3",
+      "fileHash": "afbc9173",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "5ab5368f",
+      "fileHash": "73a19928",
       "needsInterop": false
     },
     "jspdf": {
       "src": "../../../../../node_modules/jspdf/dist/jspdf.es.min.js",
       "file": "jspdf.js",
-      "fileHash": "e1d01d5b",
+      "fileHash": "05381855",
       "needsInterop": false
     },
     "ngx-capture": {
       "src": "../../../../../node_modules/ngx-capture/fesm2020/ngx-capture.mjs",
       "file": "ngx-capture.js",
-      "fileHash": "c439870c",
+      "fileHash": "533bfb58",
       "needsInterop": false
     },
     "xlsx": {
       "src": "../../../../../node_modules/xlsx/xlsx.js",
       "file": "xlsx.js",
-      "fileHash": "91dd3432",
+      "fileHash": "b10a1111",
       "needsInterop": true
     }
   },
@@ -61,17 +61,17 @@
     "index.es-BZX25ZX5": {
       "file": "index__es-BZX25ZX5.js"
     },
-    "chunk-XVX3BMMU": {
-      "file": "chunk-XVX3BMMU.js"
-    },
-    "chunk-UMXKHIZH": {
-      "file": "chunk-UMXKHIZH.js"
-    },
     "chunk-PWAGNXTZ": {
       "file": "chunk-PWAGNXTZ.js"
     },
     "chunk-32F22QZU": {
       "file": "chunk-32F22QZU.js"
+    },
+    "chunk-UMXKHIZH": {
+      "file": "chunk-UMXKHIZH.js"
+    },
+    "chunk-XVX3BMMU": {
+      "file": "chunk-XVX3BMMU.js"
     },
     "chunk-A6IMIUIQ": {
       "file": "chunk-A6IMIUIQ.js"
